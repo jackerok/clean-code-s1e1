@@ -55,7 +55,7 @@ button {
   display: flex;
 }
 
-.add__item {
+.adding__item {
   background: none;
   border: 0px;
   color: #888;
@@ -73,7 +73,7 @@ button {
   flex-grow: 1;
 }
 
-.add__item,  
+.adding__item,  
 .edit,
 .delete {
   background: none;
@@ -85,7 +85,7 @@ button {
   cursor: pointer;
 }
 
-.add__item,  
+.adding__item,  
 .edit,
 .delete:hover {
   color: #3a3a3a;
