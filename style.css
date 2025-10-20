@@ -1,47 +1,8 @@
-/* Basic Style */
+/* Basic Style  FOR except for intentionally resetting the default styles */ 
 body {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
-}
-
-.aaa {
-  width: 500px;
-  margin: 0 auto;
-  display: block;
-  text-align: right;
-}
-
-.aaa 
-img {
-  width: 100%;
-}
-
-.aaa 
-.more_inf {
-  font-family: fantasy, cursive;
-}
-
-@media (max-width:768px) {
-  .aaa { 
-    text-align: center;
-  }
-}
-
-.centered-main-page-element {
-  display: block;
-  width: 500px;
-  margin: 0 auto 0;
-}
-
-.task {
-  width: 56%;
-  display: inline-block;
-  flex-grow: 1;
-}
-
-.task-row-wrapper {
-  display: flex;
 }
 
 ul {
@@ -59,7 +20,42 @@ button {
   outline: none;
 }
 
-button {
+/* HEADER */
+
+.header {
+  width: 500px;
+  margin: 0 auto;
+  display: block;
+  text-align: right;
+}
+
+.header__img {
+  width: 100%;
+}
+
+.header__link {
+  font-family: fantasy, cursive;
+}
+
+@media (max-width:768px) {
+  .header { 
+    text-align: center;
+  }
+}
+
+/* MAIN */
+
+.main {
+  display: block;
+  width: 500px;
+  margin: 0 auto 0;
+}
+
+.adding__wrapper {
+  display: flex;
+}
+
+.addClick {
   background: none;
   border: 0px;
   color: #888;
@@ -69,14 +65,34 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+/* Heading */
+
+.task {
+  width: 56%;
+  display: inline-block;
+  flex-grow: 1;
+}
+
+.addClick,  
+.edit,
+.delete {
+  background: none;
+  border: 0px;
+  color: #888;
+  font-size: 15px;
+  width: 60px;
+  font-family: Lato, sans-serif;
+  cursor: pointer;
+}
+
+.addClick,  
+.edit,
+.delete:hover {
   color: #3a3a3a;
 }
 
-/* Heading */
-
-h3,
-label[for='new-task'] {
+.title,
+.adding__title {
   color: #333;
   font-weight: 700;
   font-size: 15px;
@@ -86,7 +102,57 @@ label[for='new-task'] {
   text-transform: uppercase;
 }
 
-input[type="text"] {
+/* New Task */
+.adding__title {
+  display: block;
+  margin: 0 0 20px;
+}
+
+#addItem {
+  width: 318px;
+}
+
+/* Task item */
+.item {
+  overflow: hidden;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.task {
+  margin: 0 10px;
+}
+
+.task {
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-size: 18px;
+  width: 226px;
+}
+
+.delete-item {
+  height: 2em;
+  transform: rotateZ(45deg);
+  transition: transform 200ms ease-in;
+}
+
+.delete-item:hover {
+  transform: rotateZ(0);
+}
+
+/* Completed */
+#completed-tasks 
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.text-input,
+.edit-input {
   margin: 0;
   font-size: 18px;
   line-height: 18px;
@@ -100,83 +166,28 @@ input[type="text"] {
   color: #888;
 }
 
-input[type="text"]:focus {
+.text-input:focus {
   color: #333;
 }
 
-/* New Task */
-label[for='new-task'] {
-  display: block;
-  margin: 0 0 20px;
-}
-
-input#new-task {
-  width: 318px;
-}
-
-/* Task list */
-li {
-  overflow: hidden;
-  padding: 20px 0;
-  border-bottom: 1px solid #eee;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-li 
-> * {
-  vertical-align: middle;
-}
-
-li 
-> input[type="checkbox"] {
-  margin: 0 10px;
-}
-
-li 
-> label {
-  padding-left: 10px;
-  box-sizing: border-box;
-  font-size: 18px;
-  width: 226px;
-}
-
-button.delete 
-img {
-  height: 2em;
-  transform: rotateZ(45deg);
-  transition: transform 200ms ease-in;
-}
-
-button.delete 
-img:hover {
-  transform: rotateZ(0);
-}
-
-/* Completed */
-ul#completed-tasks 
-label {
-  text-decoration: line-through;
-  color: #888;
-}
-
 /* Edit Task */
-ul
-li 
-input[type=text] {
+
+.item
+.text-input {
   display: none;
 }
 
-ul 
-li.editMode 
-input[type=text] {
+.editMode 
+.text-input {
   display: inline-block;
   width: 224px;
 }
 
-ul 
-li.editMode 
-label {
+.editMode 
+.completed {
   display: none;
+}
+
+.edit-input  {
+    display: none;
 }
